@@ -1,0 +1,40 @@
+body {
+    
+    height: 100vh;
+    
+}
+
+.main {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+#top {
+    height: 200px;
+    margin-bottom: 20px;
+} 
+
+#results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 20px 20px;
+    
+    gap: 2rem;
+    height: 200px;
+    
+}
+
+.password-invisible {
+    display: hidden;
+}
+
+.password-visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: orangered;   
+    border-radius: 5px;
+    padding: 1rem;
+    color: white;
+}
