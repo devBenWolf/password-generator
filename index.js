@@ -1,4 +1,4 @@
-// #1 empty array receives all possible characters
+// #1 empty array receives all characters
 let characters = []
 
 // #2 push all characters into array
@@ -8,10 +8,27 @@ for (let i = 32; i < 127; i++) {
 
 // #3 remove whitespace
 characters.shift()
+characters.splice(11, 1)
+characters.splice(26, 1)
+
 
 // #4 generate random array based on user input
-const generateRandom = (randomChar, length) => {
-    return new Array(length).fill().map(() => randomChar[Math.floor(Math.random() * randomChar.length)]).join("")
+const generateRandom = (charactersArray, selectNum) => {
+    let result = new Array(selectNum), len = charactersArray.length, selected = new Array(len)
+    if (selectNum > len) {
+        throw new RangeError("more elements selected than available")
+    } 
+
+    while (selectNum--) {
+       // x = random number between 1 and 92
+        let x = Math.floor(Math.random() * len)
+        // array[8] = characters array[]
+        result[selectNum] = charactersArray[x in selected ? selected[x] : x]
+        selected[x] = --len in selected ? selected[len] : len
+    }
+    
+    let change = result.join('')
+    return change
 }
 
 // #5 make variable global so it's accessible by click function
@@ -26,6 +43,7 @@ const selectInput = document.getElementById("selected-number")
 selectInput.addEventListener("change", function() {
     const inputValue = selectInput.options[selectInput.selectedIndex].value
     convertToInt = parseInt(inputValue)
+    console.log(convertToInt)
 })
 
 
@@ -37,52 +55,38 @@ const generateBtn = document.getElementById("generate-btn")
 let passwordArray = []
 
 
-passwordOne = document.querySelector(".password-one")
-passwordTwo = document.querySelector(".password-two")
-passwordThree = document.querySelector(".password-three")
-passwordFour = document.querySelector(".password-four")
+const passwordDiv = document.querySelectorAll(".password")
+
 
 // #11 call the function four times, and push each value into the passWord array.
 generateBtn.addEventListener("click", function(){
     passwordArray = []
     for (let i = 0; i < 4; i++) {
-        passwordArray.push(generateRandom(characters, convertToInt))
+        let result = generateRandom(characters, convertToInt)
+        passwordDiv[i].innerHTML = result
+        passwordDiv[i].classList.add("password-visible")
     }
-    console.log(passwordArray)
-    passwordOne.setAttribute("class", "password-visible")
-    passwordOne.textContent = passwordArray[0]
-
-
-    passwordTwo.setAttribute("class", "password-visible")
-    passwordTwo.textContent = passwordArray[1]
-
-
-    passwordThree.setAttribute("class", "password-visible")
-    passwordThree.textContent = passwordArray[2]
-
     
-    passwordFour.setAttribute("class", "password-visible")
-    passwordFour.textContent = passwordArray[3]
 })
+
+const resetBtn = document.getElementById("reset-btn")
 
 // #8 function to reset select box value to default.
-const resetBtn = document.getElementById("reset-btn").addEventListener("click", function(){
+resetBtn.addEventListener("click", function(){
     selectInput.selectedIndex = 0
-    passwordOne.textContent = ""
-    passwordOne.classList.remove("password-visible")
-
-
-    passwordTwo.textContent = ""
-    passwordTwo.classList.remove("password-visible")
-
-
-    passwordThree.textContent = ""
-    passwordThree.classList.remove("password-visible")
-
-
-    passwordFour.textContent = ""
-    passwordFour.classList.remove("password-visible")
+    for (let i = 0; i < 4; i++) {
+        passwordDiv[i].textContent = ""
+        passwordDiv[i].classList.remove("password-visible")
+    }
 })
+
+
+passwordDiv.forEach(item => item.addEventListener("click", function() {
+    navigator.clipboard.writeText(item.textContent)
+})) 
+
+
+
 
 
 // #12

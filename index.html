@@ -11,15 +11,17 @@
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
-<body>
+<!-- force select input to reset on refresh -->
+<body onLoad="document.getElementById('selected-number').options[0].selected = 'selected';">
     <header>
     </header>
     <div class = "main">
         <div id="top">
-            <h1>Generate a <span>random password</span></h1>
+            <h1 class="title">Generate a <span class="green-span-title">random password</span></h1>
             <h2>Never use an insecure password again.</h2>
             <button id="generate-btn">Generate passwords</button>
-            <select id="selected-number" value="choose password length">
+            <label>Choose password length
+            <select id="selected-number">
                 <option value = "8">8</option>
                 <option value = "9">9</option>
                 <option value = "10">10</option>
@@ -28,13 +30,14 @@
                 <option value = "13">13</option>
                 <option value = "14">14</option>
             </select>
+        </label>
             <button id="reset-btn">reset</button>
         </div>
         <div id="results">
-            <div class="password-one password-invisible"></div>
-            <div class="password-two password-invisible"></div>
-            <div class="password-three password-invisible"></div>
-            <div class="password-four password-invisible"></div>
+            <button class="password password-invisible"></button>
+            <button class="password password-invisible"></button>
+            <button class="password password-invisible"></button>
+            <button class="password password-invisible"></button>
         </div>
     </div>
     <script src="index.js"></script>
