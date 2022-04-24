@@ -136,14 +136,17 @@ select {
     font-style: italic;
 }
 
+.sub-title {
+    font-size: 1.3rem;
+    
+}
+
 .span-title {
     display: block;
     margin-left: 2rem;
+    color: hsl(307, 78%, 66%);
 }
 
-.sub-title {
-    font-size: 1.5rem;
-}
 
 .inputs {
 
