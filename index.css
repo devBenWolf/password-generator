@@ -81,8 +81,6 @@ html {
 body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    background-image: linear-gradient(0.60turn, hsl(230, 54%, 5%), hsl(240, 40%, 36%), hsl(230, 74%, 5%));
-
     text-rendering: optimizeSpeed;
     margin: 0;
     line-height: 1.5;
@@ -109,6 +107,7 @@ select {
     grid-template-areas: 
         "main"
         "results";
+    background-image: linear-gradient(0.60turn, hsl(230, 54%, 5%), hsl(240, 40%, 36%), hsl(230, 74%, 5%));
 }
 
 .top {
