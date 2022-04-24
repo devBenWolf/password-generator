@@ -120,6 +120,7 @@ select {
         "subtitle"
         "inputs"
     ;
+    
 } 
 
 .main > * {
@@ -139,10 +140,22 @@ select {
     font-style: italic;
 }
 
+@media (width > 35rem) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
 .sub-title {
     grid-area: subtitle;
     font-size: 1.1rem;
     text-align: left; 
+}
+
+@media (width > 35rem) {
+    .sub-title {
+        font-size: 1.8rem;
+    }
 }
 
 .span-title {
@@ -159,6 +172,7 @@ select {
 
 .generate-btn {
     display: block;
+    margin-inline: auto;
     background-color: hsl(307, 78%, 66%);
     border: none;
     border-radius: 5px;
@@ -177,6 +191,12 @@ select {
     grid-area: results;
 }
 
+@media (width > 35rem) {
+    .results {
+        grid-template-columns: 20rem 20rem;
+    }
+}
+
 
 /* ******conditional classes ****** */
 
@@ -191,6 +211,12 @@ select {
     color: white;
     cursor: pointer;
     font-size: 1.4rem;
+}
+
+@media (width > 35rem) {
+    .password {
+        font-size: 1.7rem;
+    }
 }
 
 .span-text {
