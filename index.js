@@ -37,7 +37,7 @@ let convertToInt = 8
 
 
 // #6 get the select box
-const selectInput = document.getElementById("selected-number")
+const selectInput = document.querySelector(".selected-number")
 
 // #7 take the selected value, convert to an integer
 selectInput.addEventListener("change", function() {
@@ -49,7 +49,7 @@ selectInput.addEventListener("change", function() {
 
 
 // #9 get the password generate button
-const generateBtn = document.getElementById("generate-btn")
+const generateBtn = document.querySelector(".generate-btn")
 
 // #10 array to receive the four possible passwords
 let passwordArray = []
@@ -64,19 +64,18 @@ generateBtn.addEventListener("click", function(){
     for (let i = 0; i < 4; i++) {
         let result = generateRandom(characters, convertToInt)
         passwordDiv[i].innerHTML = result
-        passwordDiv[i].classList.add("password-visible")
+
     }
     
 })
 
-const resetBtn = document.getElementById("reset-btn")
+const resetBtn = document.querySelector(".reset-btn")
 
 // #8 function to reset select box value to default.
 resetBtn.addEventListener("click", function(){
     selectInput.selectedIndex = 0
     for (let i = 0; i < 4; i++) {
         passwordDiv[i].textContent = ""
-        passwordDiv[i].classList.remove("password-visible")
     }
 })
 

@@ -17,33 +17,34 @@
     <title>Document</title>
 </head>
 <!-- force select input to reset on refresh -->
-<body onLoad="document.getElementById('selected-number').options[0].selected = 'selected';">
+<body onLoad="document.querySelector('.selected-number').options[0].selected = 'selected';">
     <header>
     </header>
     <div class = "main flow">
-        <div id="top" class="flow">
-            <h1 class="title" >Generate a <span class="span-title">random password</span></h1>
-            <h2 class="sub-title">Never use an insecure password again.</h2>
-            <div class="inputs" style="--flow-space: 5rem;">          
-            <label>Choose password length:
-                <select id="selected-number">
-                    <option value = "8">8</option>
-                    <option value = "9">9</option>
-                    <option value = "10">10</option>
-                    <option value = "11">11</option>
-                    <option value = "12">12</option>
-                    <option value = "13">13</option>
-                    <option value = "14">14</option>
-                </select>
-            </label>
+        <div class="top flow" >
+            <h1 class="title" style="--flow-space: 5rem;">Generate a <span class="span-title">random password</span></h1>
+            <h2 class="sub-title" style="--flow-space: 2rem;">Never use an insecure password again.</h2>
+            <div class="inputs flow" style="--flow-space: 5rem;">          
+                <label style="--flow-space: 5rem;">Choose password length:
+                    <select class="selected-number">
+                        <option value = "8">8</option>
+                        <option value = "9">9</option>
+                        <option value = "10">10</option>
+                        <option value = "11">11</option>
+                        <option value = "12">12</option>
+                        <option value = "13">13</option>
+                        <option value = "14">14</option>
+                    </select>
+                </label>
+                <button class="generate-btn" >Generate passwords</button>
             </div>
-            <button id="generate-btn" style="--flow-space: 3rem">Generate passwords</button>
+            
         </div>
-        <div id="results flow">
-            <button class="password password-invisible"></button>
-            <button class="password password-invisible"></button>
-            <button class="password password-invisible"></button>
-            <button class="password password-invisible"></button>
+        <div class="results" style="--flow-space: 5rem" >
+            <button class="password"></button>
+            <button class="password"></button>
+            <button class="password"></button>
+            <button class="password"></button>
         </div>
     </div>
     <script src="index.js"></script>

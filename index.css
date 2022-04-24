@@ -49,9 +49,6 @@ html:focus-within {
 }
 
 
-
-
-
 img,
 picture {
     max-width: 100%;
@@ -108,27 +105,33 @@ select {
 /* ****** layout ****** */
 .main {
     display: grid;
+    place-items: center;
     grid-template-areas: 
+        "main"
+        "results";
+}
+
+.top {
+    margin-top: 5rem;
+    grid-area: main;
+    display: grid;
+    grid-template-areas:
         "title"
         "subtitle"
-        "generate"
-        "results";
-
-    height: 100vh;
-    place-items: center;
-
-
-}
+        "inputs"
+    ;
+} 
 
 .main > * {
     text-align: center;
 }
 
 .flow > * + * {
-    margin-top: var(--flow-space, 1rem);
+    margin-top: var(--flow-space, 3rem);
 }
 
 .title {
+    grid-area: title;
     color: white;
     font-size: 2.5rem;
     text-align: left;
@@ -137,8 +140,9 @@ select {
 }
 
 .sub-title {
+    grid-area: subtitle;
     font-size: 1.1rem;
-    
+    text-align: left; 
 }
 
 .span-title {
@@ -149,15 +153,11 @@ select {
 
 
 .inputs {
-
+    grid-area: inputs;
 }
 
-#top {
-    height: 200px;
-    margin-bottom: 20px;
-} 
 
-#generate-btn {
+.generate-btn {
     display: block;
     background-color: hsl(307, 78%, 66%);
     border: none;
@@ -169,32 +169,28 @@ select {
     font-style: italic;
 }
 
-#results {
+.results {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 20px 20px;
+    grid-template-columns: 12rem 12rem;
+    grid-template-rows: 4rem 4rem;
     gap: 2rem;
-    height: 200px;
-    
+    grid-area: results;
 }
 
 
 /* ******conditional classes ****** */
-.password-invisible {
-    display: none;
-    border: none;
-    color:hsla(215, 28%, 17%, 1);
-}
 
-.password-visible {
+.password {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: orangered;   
+    background-color: hsl(240, 22%, 30%);
+    border: none;   
     border-radius: 5px;
     padding: 1rem;
     color: white;
     cursor: pointer;
+    font-size: 1.4rem;
 }
 
 .span-text {
