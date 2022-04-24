@@ -103,6 +103,7 @@ select {
 /* ****** layout ****** */
 .main {
     display: grid;
+    height: 100vh;
     place-items: center;
     grid-template-areas: 
         "main"
