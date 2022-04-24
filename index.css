@@ -4,14 +4,116 @@ body {
     color: white;
 }
 
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+picture,
+blockquote,
+figure {
+    margin: 0;
+}
+
+
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-300);
+    color: hsl( var(--clr-white) );
+    background-color: hsl( var(--clr-dark) );
+    margin: 0;
+
+    
+}
+
+
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+select,
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* ****** base font-sizing ****** */
+html {
+    font-size: 62.5%;
+}
+
+/* ****** layout ****** */
 .main {
     display: grid;
     height: 100vh;
     place-items: center;
+    margin: 0 20px;
+    border: solid red;
+}
+
+.main > * {
+    text-align: center;
 }
 
 .title {
     color: white;
+    font-size: 40px;
+    text-align: left;
+    
 }
 
 .green-span-title {
@@ -40,6 +142,8 @@ body {
     
 }
 
+
+/* ******conditional classes ****** */
 .password-invisible {
     display: none;
     border: none;
