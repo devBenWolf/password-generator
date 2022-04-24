@@ -102,6 +102,13 @@ select {
     color: white;
 }
 
+button {
+    background-color: hsl(222, 83%, 59%);
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+}
+
 /* ****** layout ****** */
 .main {
     display: grid;
@@ -199,8 +206,11 @@ select {
     }
 }
 
+.outer-div {
+    display: flex;
+}
 
-/* ******conditional classes ****** */
+
 
 .password {
     display: flex;
@@ -213,6 +223,7 @@ select {
     color: white;
     cursor: pointer;
     font-size: 1.4rem;
+    width: 100%;
 }
 
 @media (width > 35rem) {

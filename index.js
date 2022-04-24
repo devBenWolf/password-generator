@@ -69,11 +69,17 @@ generateBtn.addEventListener("click", function(){
     
 })
 
+let password = document.querySelectorAll("button")
+
+let clipboardOne = new ClipboardJS(password)
 
 
-passwordDiv.forEach(item => item.addEventListener("click",  function() {
-   return navigator.clipboard.writeText(item.textContent)
-})) 
+
+//passwordDiv.forEach(item => item.addEventListener("click",  function() {
+//   copyText =  navigator.clipboard.writeText(item.textContent)
+//   console.log(copyText)
+//   return copyText
+//})) 
 
 
 
