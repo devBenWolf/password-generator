@@ -98,7 +98,7 @@ label {
 }
 select {
     margin-left: 1rem;
-    background-color: hsl(274, 54%, 43%);
+    background-color: hsl(240, 22%, 30%);
     border: none;
     border-radius: 5px;
     padding: 0.2rem 0.5rem;
@@ -156,11 +156,14 @@ select {
 
 #generate-btn {
     display: block;
-    background-color: hsl(46, 48%, 36%);
+    background-color: hsl(200, 54%, 45%);
     border: none;
     border-radius: 5px;
     padding: 10px;
     color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+    font-style: italic;
 }
 
 #results {
