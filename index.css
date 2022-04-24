@@ -92,9 +92,15 @@ body {
 /* ****** layout ****** */
 .main {
     display: grid;
+    grid-template-areas: 
+        "title"
+        "subtitle"
+        "generate"
+        "results";
+
     height: 100vh;
     place-items: center;
-    margin: 0 20px;
+    margin: 0 2rem;
     border: solid red;
 }
 
@@ -102,9 +108,13 @@ body {
     text-align: center;
 }
 
+[data-flow = "1"] {
+
+}
+
 .title {
     color: white;
-    font-size: 40px;
+    font-size: 4rem;
     text-align: left;
     
 }
