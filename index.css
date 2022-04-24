@@ -81,7 +81,6 @@ html {
 
 body {
     min-height: 100vh;
-    border: solid red;
     font-family: 'Open Sans', sans-serif;
     text-rendering: optimizeSpeed;
     margin: 0;
