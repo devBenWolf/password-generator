@@ -108,8 +108,8 @@ body {
     text-align: center;
 }
 
-[data-flow = "1"] {
-
+.flow > * + * {
+    margin-top: var(--flow-space, 1rem);
 }
 
 .title {
