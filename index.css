@@ -116,8 +116,8 @@ select {
 
     height: 100vh;
     place-items: center;
-    margin: 0 2rem;
-    border: solid red;
+
+
 }
 
 .main > * {
@@ -137,7 +137,7 @@ select {
 }
 
 .sub-title {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     
 }
 
@@ -159,7 +159,7 @@ select {
 
 #generate-btn {
     display: block;
-    background-color: hsl(200, 54%, 45%);
+    background-color: hsl(307, 78%, 66%);
     border: none;
     border-radius: 5px;
     padding: 10px;
