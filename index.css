@@ -132,12 +132,17 @@ body {
     color: white;
 }
 
+.inputs {
+
+}
+
 #top {
     height: 200px;
     margin-bottom: 20px;
 } 
 
 #generate-btn {
+    display: block;
     background-color:hsla(160, 84%, 39%, 1);
     border: none;
     border-radius: 5px;
