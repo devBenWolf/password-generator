@@ -1,8 +1,4 @@
-body {
-    height: 100vh;
-    background-color: hsla(215, 28%, 17%, 1);
-    color: white;
-}
+
 
 /* https://piccalil.li/blog/a-modern-css-reset */
 
@@ -52,18 +48,7 @@ html:focus-within {
     }
 }
 
-body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
-    font-family: var(--ff-sans-normal);
-    font-size: var(--fs-300);
-    color: hsl( var(--clr-white) );
-    background-color: hsl( var(--clr-dark) );
-    margin: 0;
 
-    
-}
 
 
 
@@ -94,6 +79,14 @@ p {
 /* ****** base font-sizing ****** */
 html {
     font-size: 62.5%;
+}
+
+body {
+    height: 100vh;
+    background-color: hsla(215, 28%, 17%, 1);
+    text-rendering: optimizeSpeed;
+    margin: 0;
+    line-height: 1.5;
 }
 
 /* ****** layout ****** */
