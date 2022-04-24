@@ -69,19 +69,10 @@ generateBtn.addEventListener("click", function(){
     
 })
 
-const resetBtn = document.querySelector(".reset-btn")
-
-// #8 function to reset select box value to default.
-resetBtn.addEventListener("click", function(){
-    selectInput.selectedIndex = 0
-    for (let i = 0; i < 4; i++) {
-        passwordDiv[i].textContent = ""
-    }
-})
 
 
-passwordDiv.forEach(item => item.addEventListener("click", function() {
-    navigator.clipboard.writeText(item.textContent)
+passwordDiv.forEach(item => item.addEventListener("click",  function() {
+   return navigator.clipboard.writeText(item.textContent)
 })) 
 
 
