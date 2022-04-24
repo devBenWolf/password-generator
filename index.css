@@ -84,7 +84,8 @@ html {
 body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    background-image: linear-gradient(to right, #8E2DE2, #4A00E0);
+    background-image: linear-gradient(0.60turn, hsl(230, 54%, 5%), hsl(240, 40%, 36%), hsl(230, 74%, 5%));
+
     text-rendering: optimizeSpeed;
     margin: 0;
     line-height: 1.5;
@@ -155,7 +156,7 @@ select {
 
 #generate-btn {
     display: block;
-    
+    background-color: hsl(46, 48%, 36%);
     border: none;
     border-radius: 5px;
     padding: 10px;
