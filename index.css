@@ -135,8 +135,7 @@ select {
     font-style: italic;
 }
 
-.green-span-title {
-    color: hsla(160, 84%, 39%, 1);
+.span-title {
     display: block;
     margin-left: 2rem;
 }
