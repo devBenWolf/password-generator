@@ -84,10 +84,23 @@ html {
 body {
     height: 100vh;
     font-family: 'Open Sans', sans-serif;
-    background-color: hsla(215, 28%, 17%, 1);
+    background-image: linear-gradient(to right, #8E2DE2, #4A00E0);
     text-rendering: optimizeSpeed;
     margin: 0;
     line-height: 1.5;
+    color: white;
+}
+
+label {
+    font-size: 1.5rem;
+
+}
+select {
+    margin-left: 1rem;
+    background-color: hsl(274, 54%, 43%);
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
     color: white;
 }
 
@@ -143,7 +156,7 @@ body {
 
 #generate-btn {
     display: block;
-    background-color:hsla(160, 84%, 39%, 1);
+    
     border: none;
     border-radius: 5px;
     padding: 10px;
