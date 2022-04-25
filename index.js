@@ -57,15 +57,15 @@ let passwordArray = []
 
 const passwordDiv = document.querySelectorAll(".password")
 
-
+let isClicked = false
 // #11 call the function four times, and push each value into the passWord array.
-generateBtn.addEventListener("click", function(){
+generateBtn.addEventListener("click", () => {
     passwordArray = []
     for (let i = 0; i < 4; i++) {
         let result = generateRandom(characters, convertToInt)
         passwordDiv[i].innerHTML = result
     }
-    
+    isClicked = true
 })
 
 
@@ -101,18 +101,18 @@ let tips = document.querySelectorAll(".tooltip-text")
 let tipsArray = [].slice.call(tips)
 
 let [tooltipOne, tooltipTwo, tooltipThree, tooltipFour] = tipsArray
-const handleClick = (toolTip) => {
-    
-    toolTip.style.visibility = "visible"
-    toolTip.style.transition = "all 1s ease"
+
+
+const handleClick = (toolTip, isClicked) => { 
+    isClicked ? toolTip.style.visibility = "visible" : toolTip.style.visibility = "hidden"
     setTimeout(() => {
         toolTip.style.visibility = "hidden"
     }, 2000)
 }
 
 
- btnOne.addEventListener("click", () => handleClick(tooltipOne))
- btnTwo.addEventListener("click", () => handleClick(tooltipTwo))
- btnThree.addEventListener("click", () => handleClick(tooltipThree))
- btnFour.addEventListener("click", () => handleClick(tooltipFour))
+ btnOne.addEventListener("click", () => handleClick(tooltipOne, isClicked))
+ btnTwo.addEventListener("click", () => handleClick(tooltipTwo, isClicked))
+ btnThree.addEventListener("click", () => handleClick(tooltipThree, isClicked))
+ btnFour.addEventListener("click", () => handleClick(tooltipFour, isClicked))
 

@@ -104,7 +104,7 @@ select {
 
 button {
     background-color: hsl(222, 83%, 59%);
-    border-radius: 5px;
+    border-radius: 0 5px 5px 0;
     color: white;
     font-weight: bold;
 }
@@ -200,7 +200,7 @@ button {
 
 .results {
     display: grid;
-    grid-template-columns: 12rem 12rem;
+    grid-template-columns: 16rem 16rem;
     grid-template-rows: 4rem 4rem;
     gap: 2rem;
     grid-area: results;
@@ -223,7 +223,7 @@ button {
     align-items: center;
     background-color: hsl(240, 22%, 30%);
     border: none;   
-    border-radius: 5px;
+    border-radius: 5px 0 0 5px;
     padding: 1rem;
     color: white;
     cursor: pointer;
@@ -233,6 +233,10 @@ button {
     z-index: -1;
 }
 
+.copy {
+    border: none;
+    padding-inline: 0.5rem;
+}
 
 
 @media (width > 35rem) {
