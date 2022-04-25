@@ -109,6 +109,11 @@ button {
     font-weight: bold;
 }
 
+::selection {
+    color: none;
+    background: none;
+}
+
 /* ****** layout ****** */
 .main {
     display: grid;
@@ -190,6 +195,7 @@ button {
     font-weight: bold;
     font-size: 1.5rem;
     font-style: italic;
+    cursor: pointer;
 }
 
 .results {
@@ -208,6 +214,7 @@ button {
 
 .outer-div {
     display: flex;
+
 }
 
 .password {
@@ -222,12 +229,11 @@ button {
     cursor: pointer;
     font-size: 1.4rem;
     width: 100%;
+    position: relative;
+    z-index: -1;
 }
 
-::selection {
-    color: none;
-    background: none;
-}
+
 
 @media (width > 35rem) {
     .password {
@@ -238,4 +244,26 @@ button {
 .span-text {
     margin-left: 1rem;
     font-style: italic;
+}
+
+
+.tooltip-text {
+    z-index: 1;
+    position: absolute;
+    transform: translate(40%, -55%);
+    background-color: black;
+    padding: 0.4rem;
+    border-radius: 5px;
+    border-bottom: dotted;
+    border-width: 0.6px;
+    letter-spacing: 0.15rem;
+    visibility: hidden;
+    
+}
+
+
+@media (width > 35rem) {
+    .tooltip-text {
+        transform: translate(120%, -55%)
+    }
 }

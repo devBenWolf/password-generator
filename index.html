@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+
 <!-- force select input to reset on refresh -->
 <body onLoad="document.querySelector('.selected-number').options[0].selected = 'selected';">
     <header>
@@ -44,28 +44,29 @@
 
         <div class="results" style="--flow-space: 5rem" >
             <div class="outer-div">
-                <div  id="passOne" class="password"></div>
-                <button data-clipboard-target ="#passOne">copy</button>
+                <div  id="passOne" class="password" ></div>            
+                <button class="copy btn-one" data-clipboard-target ="#passOne">copy</button>
+                <span class="tooltip-text tooltip-one">copied!</span>
             </div>
             <div class="outer-div">
                 <div id="passTwo" class="password"></div>
-                <button data-clipboard-target ="#passTwo">copy</button>
+                <button class="copy btn-two" data-clipboard-target ="#passTwo">copy</button>
+                <span class="tooltip-text tooltip-two">copied!</span>
             </div>
             <div class="outer-div">
                 <div id="passThree" class="password"></div>
-                <button data-clipboard-target ="#passThree">copy</button>
+                <button class="copy btn-three" data-clipboard-target ="#passThree">copy</button>
+                <span class="tooltip-text tooltip-three">copied!</span>
             </div>
             <div class="outer-div">
                 <div id="passFour" class="password"></div>
-                <button data-clipboard-target ="#passFour">copy</button>
+                <button class="copy btn-four" data-clipboard-target ="#passFour">copy</button>
+                <span class="tooltip-text tooltip-four">copied!</span>
+            
             </div>
         </div>
     </div>
-
-    <!-- <button id="test-button" data-clipboard-target ="#passOne">Copy</button> -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
     <script src="index.js"></script>
-    
-
-    
 </body>
 </html>

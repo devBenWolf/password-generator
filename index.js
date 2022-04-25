@@ -64,27 +64,55 @@ generateBtn.addEventListener("click", function(){
     for (let i = 0; i < 4; i++) {
         let result = generateRandom(characters, convertToInt)
         passwordDiv[i].innerHTML = result
-
     }
     
 })
 
-let password = document.querySelectorAll("button")
 
-let clipboardOne = new ClipboardJS(password)
+let password = document.querySelectorAll(".copy")
+
+let clipboard = new ClipboardJS(password)
+
+clipboard.on("success", function(event) {
+    console.info("Action:", event.action)
+    console.info("Text:", event.text)
+    console.info("Trigger:", event.trigger)
+
+    event.clearSelection()
+})
+
+clipboard.on('error', function(event) {
+    console.error('Action:', event.action);
+    console.error('Trigger:', event.trigger);
+});
+
+console.log(ClipboardJS.isSupported());
+
+//let btnOne = document.querySelector(".btn-one")
+let toolTipOne = document.querySelector(".tooltip-one")
+
+let buttons = document.querySelectorAll(".copy")
+let buttonsArray = [].slice.call(buttons)
+console.log(buttonsArray)
+
+let [btnOne, btnTwo, btnThree, btnFour] = buttonsArray
+
+let tips = document.querySelectorAll(".tooltip-text")
+let tipsArray = [].slice.call(tips)
+
+let [tooltipOne, tooltipTwo, tooltipThree, tooltipFour] = tipsArray
+const handleClick = (toolTip) => {
+    
+    toolTip.style.visibility = "visible"
+    toolTip.style.transition = "all 1s ease"
+    setTimeout(() => {
+        toolTip.style.visibility = "hidden"
+    }, 2000)
+}
 
 
-
-//passwordDiv.forEach(item => item.addEventListener("click",  function() {
-//   copyText =  navigator.clipboard.writeText(item.textContent)
-//   console.log(copyText)
-//   return copyText
-//})) 
-
-
-
-
-
-// #12
-
+ btnOne.addEventListener("click", () => handleClick(tooltipOne))
+ btnTwo.addEventListener("click", () => handleClick(tooltipTwo))
+ btnThree.addEventListener("click", () => handleClick(tooltipThree))
+ btnFour.addEventListener("click", () => handleClick(tooltipFour))
 
