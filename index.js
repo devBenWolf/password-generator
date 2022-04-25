@@ -12,21 +12,27 @@ characters.splice(11, 1)
 characters.splice(26, 1)
 
 
-// #4 generate random array based on user input
+// #4 generate random array
 const generateRandom = (charactersArray, selectNum) => {
     let result = new Array(selectNum), len = charactersArray.length, selected = new Array(len)
+    // console.log(`I am an array based on length chosen by the user`, result)
+    // console.log(`I am the array with all possible characters`, len)
+    // console.log(`I am an array the length of the previous array `, selected)
     if (selectNum > len) {
         throw new RangeError("more elements selected than available")
     } 
 
     while (selectNum--) {
        // x = random number between 1 and 92
-        let x = Math.floor(Math.random() * len)
-        // array[8] = characters array[]
-        result[selectNum] = charactersArray[x in selected ? selected[x] : x]
+        let x = Math.floor(Math.random() * len) 
+        // console.log(`I am the random number ${x}.`)      
+        result[selectNum] = charactersArray[x in selected ? selected[x] : x] 
+        // console.log(`If x is not in selected, ${charactersArray[x]} is pushed into result ${result}`)   
         selected[x] = --len in selected ? selected[len] : len
-    }
+        // console.log(` if len is not in selected, ${len} is pushed into selected ${selected}`)
     
+    }
+    // join array into string
     let change = result.join('')
     return change
 }
@@ -46,19 +52,20 @@ selectInput.addEventListener("change", function() {
     console.log(convertToInt)
 })
 
+// #8 get divs displaying passwords
+const passwordDiv = document.querySelectorAll(".password")
 
 
-// #9 get the password generate button
-const generateBtn = document.querySelector(".generate-btn")
+// #9 conditionally render tooltips
+let isClicked = false
 
-// #10 array to receive the four possible passwords
+
+// #10 assign empty array to recieve passwords
 let passwordArray = []
 
 
-const passwordDiv = document.querySelectorAll(".password")
-
-let isClicked = false
-// #11 call the function four times, and push each value into the passWord array.
+// #11 generate passwords and render on page
+const generateBtn = document.querySelector(".generate-btn")
 generateBtn.addEventListener("click", () => {
     passwordArray = []
     for (let i = 0; i < 4; i++) {
@@ -68,9 +75,8 @@ generateBtn.addEventListener("click", () => {
     isClicked = true
 })
 
-
+// #12 clipboardJS https://clipboardjs.com/
 let password = document.querySelectorAll(".copy")
-
 let clipboard = new ClipboardJS(password)
 
 clipboard.on("success", function(event) {
@@ -88,21 +94,24 @@ clipboard.on('error', function(event) {
 
 console.log(ClipboardJS.isSupported());
 
-//let btnOne = document.querySelector(".btn-one")
-let toolTipOne = document.querySelector(".tooltip-one")
 
+// ****** #12 tooltips ******
+
+// get copy buttons
 let buttons = document.querySelectorAll(".copy")
-let buttonsArray = [].slice.call(buttons)
-console.log(buttonsArray)
 
+// convert nodelist into array
+let buttonsArray = [].slice.call(buttons)
+
+// destructure array
 let [btnOne, btnTwo, btnThree, btnFour] = buttonsArray
 
+// repeat above
 let tips = document.querySelectorAll(".tooltip-text")
 let tipsArray = [].slice.call(tips)
-
 let [tooltipOne, tooltipTwo, tooltipThree, tooltipFour] = tipsArray
 
-
+// conditionally render tooltips if generator has been called.
 const handleClick = (toolTip, isClicked) => { 
     isClicked ? toolTip.style.visibility = "visible" : toolTip.style.visibility = "hidden"
     setTimeout(() => {
