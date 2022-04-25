@@ -76,8 +76,8 @@ generateBtn.addEventListener("click", () => {
 })
 
 // #12 clipboardJS https://clipboardjs.com/
-let password = document.querySelectorAll(".copy")
-let clipboard = new ClipboardJS(password)
+const password = document.querySelectorAll(".copy")
+const clipboard = new ClipboardJS(password)
 
 clipboard.on("success", function(event) {
     console.info("Action:", event.action)
@@ -98,18 +98,18 @@ console.log(ClipboardJS.isSupported());
 // ****** #12 tooltips ******
 
 // get copy buttons
-let buttons = document.querySelectorAll(".copy")
+const buttons = document.querySelectorAll(".copy")
 
 // convert nodelist into array
-let buttonsArray = [].slice.call(buttons)
+const buttonsArray = [].slice.call(buttons)
 
 // destructure array
-let [btnOne, btnTwo, btnThree, btnFour] = buttonsArray
+const [btnOne, btnTwo, btnThree, btnFour] = buttonsArray
 
 // repeat above
-let tips = document.querySelectorAll(".tooltip-text")
-let tipsArray = [].slice.call(tips)
-let [tooltipOne, tooltipTwo, tooltipThree, tooltipFour] = tipsArray
+const tips = document.querySelectorAll(".tooltip-text")
+const tipsArray = [].slice.call(tips)
+const [tooltipOne, tooltipTwo, tooltipThree, tooltipFour] = tipsArray
 
 // conditionally render tooltips if generator has been called.
 const handleClick = (toolTip, isClicked) => { 
