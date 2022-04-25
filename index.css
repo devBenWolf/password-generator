@@ -200,7 +200,7 @@ button {
 
 .results {
     display: grid;
-    grid-template-columns: 16rem 16rem;
+    grid-template-columns: 14rem 14rem;
     grid-template-rows: 4rem 4rem;
     gap: 2rem;
     grid-area: results;
