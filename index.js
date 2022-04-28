@@ -75,25 +75,6 @@ generateBtn.addEventListener("click", () => {
     isClicked = true
 })
 
-// #12 clipboardJS https://clipboardjs.com/
-const password = document.querySelectorAll(".copy")
-const clipboard = new ClipboardJS(password)
-
-clipboard.on("success", function(event) {
-    console.info("Action:", event.action)
-    console.info("Text:", event.text)
-    console.info("Trigger:", event.trigger)
-
-    event.clearSelection()
-})
-
-clipboard.on('error', function(event) {
-    console.error('Action:', event.action);
-    console.error('Trigger:', event.trigger);
-});
-
-console.log(ClipboardJS.isSupported());
-
 
 // ****** #12 tooltips ******
 
@@ -106,13 +87,22 @@ const buttonsArray = [].slice.call(buttons)
 // destructure array
 const [btnOne, btnTwo, btnThree, btnFour] = buttonsArray
 
-// repeat above
+// repeat for tooltips
 const tips = document.querySelectorAll(".tooltip-text")
 const tipsArray = [].slice.call(tips)
 const [tooltipOne, tooltipTwo, tooltipThree, tooltipFour] = tipsArray
 
+// repeat for password display divs
+const passDisplay = document.querySelectorAll(".password")
+const passArray = [].slice.call(passDisplay)
+const [passOne, passTwo, passThree, passFour] = passArray
+
+
+
 // conditionally render tooltips if generator has been called.
-const handleClick = (toolTip, isClicked) => { 
+const handleClick = (toolTip, isClicked, passDisplay) => { 
+    navigator.clipboard.writeText(passDisplay.innerText)
+    .then(console.log("copied!!"))
     isClicked ? toolTip.style.visibility = "visible" : toolTip.style.visibility = "hidden"
     setTimeout(() => {
         toolTip.style.visibility = "hidden"
@@ -120,8 +110,8 @@ const handleClick = (toolTip, isClicked) => {
 }
 
 
- btnOne.addEventListener("click", () => handleClick(tooltipOne, isClicked))
- btnTwo.addEventListener("click", () => handleClick(tooltipTwo, isClicked))
- btnThree.addEventListener("click", () => handleClick(tooltipThree, isClicked))
- btnFour.addEventListener("click", () => handleClick(tooltipFour, isClicked))
+ btnOne.addEventListener("click", () => handleClick(tooltipOne, isClicked, passOne))
+ btnTwo.addEventListener("click", () => handleClick(tooltipTwo, isClicked, passTwo))
+ btnThree.addEventListener("click", () => handleClick(tooltipThree, isClicked, passThree))
+ btnFour.addEventListener("click", () => handleClick(tooltipFour, isClicked, passFour))
 
