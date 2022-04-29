@@ -15,22 +15,15 @@ characters.splice(26, 1)
 // #4 generate random array
 const generateRandom = (charactersArray, selectNum) => {
     let result = new Array(selectNum), len = charactersArray.length, selected = new Array(len)
-    // console.log(`I am an array based on length chosen by the user`, result)
-    // console.log(`I am the array with all possible characters`, len)
-    // console.log(`I am an array the length of the previous array `, selected)
     if (selectNum > len) {
         throw new RangeError("more elements selected than available")
     } 
 
     while (selectNum--) {
        // x = random number between 1 and 92
-        let x = Math.floor(Math.random() * len) 
-        // console.log(`I am the random number ${x}.`)      
+        let x = Math.floor(Math.random() * len)     
         result[selectNum] = charactersArray[x in selected ? selected[x] : x] 
-        // console.log(`If x is not in selected, ${charactersArray[x]} is pushed into result ${result}`)   
-        selected[x] = --len in selected ? selected[len] : len
-        // console.log(` if len is not in selected, ${len} is pushed into selected ${selected}`)
-    
+        selected[x] = --len in selected ? selected[len] : len  
     }
     // join array into string
     let change = result.join('')
