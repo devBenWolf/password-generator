@@ -137,6 +137,13 @@ button {
     
 } 
 
+.main {
+    border: solid red;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
 .main > * {
     text-align: center;
 }
@@ -235,7 +242,8 @@ button {
     font-size: 1.4rem;
     width: 100%;
     position: relative;
-    z-index: -1;
+
+    
 }
 
 
