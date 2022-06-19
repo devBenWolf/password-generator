@@ -160,7 +160,7 @@ button {
     font-style: italic;
 }
 
-@media (width > 35rem) {
+@media (min-width: 35rem) {
     .title {
         font-size: 4rem;
     }
@@ -172,7 +172,7 @@ button {
     text-align: left; 
 }
 
-@media (width > 35rem) {
+@media (min-width: 35rem) {
     .sub-title {
         font-size: 1.8rem;
     }
@@ -212,7 +212,7 @@ button {
     grid-area: results;
 }
 
-@media (width > 35rem) {
+@media (min-width: 35rem) {
     .results {
         grid-template-columns: 20rem 20rem;
     }
