@@ -205,22 +205,26 @@ button {
 }
 
 .results {
-    display: grid;
-    grid-template-columns: 14rem 14rem;
-    grid-template-rows: 4rem 4rem;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-    grid-area: results;
+    
 }
 
 @media (min-width: 35rem) {
     .results {
+        display: grid;
+        grid-template-rows: 4rem 4rem;
         grid-template-columns: 20rem 20rem;
+        gap: 6rem;
+        justify-content: center;
     }
 }
 
 .outer-div {
     display: flex;
-
+    width: 18rem;
+    height: 4rem;
 }
 
 .copy {
